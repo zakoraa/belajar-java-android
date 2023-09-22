@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical"
-    android:background="@color/blue"
+    android:background="@drawable/border_radius"
     android:paddingVertical="20dp"
     android:paddingHorizontal="50dp"
     android:layout_marginHorizontal="20dp"
     >
+
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="163dp"
+        android:layout_height="142dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/photo_profile"/>
+        android:src="@drawable/photo_profile" />
 
     <include layout="@layout/login_form" />
 

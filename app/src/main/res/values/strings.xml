@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Belajar</string>
     <string name="login">LOGIN</string>
-    <string name="login_success">Login Success, Welcome %1$s</string>
+    <string name="get_name_success">Your Name: %1$s</string>
+    <string name="get_email_success">Your Email: %1$s</string>
+    <string name="get_pass_success">Your Pass: %1$s</string>
     <string-array name="hints">
         <item>Name</item>
         <item>Email</item>
