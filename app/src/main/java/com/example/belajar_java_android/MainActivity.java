@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
                 String name = nameEditText.getText().toString();
                 String success = res.getString(R.string.login_success, name);
-                String[] fullName = res.getStringArray(R.array.full_name);
+//                String[] fullName = res.getStringArray(R.array.full_name);
 
                 if(name.length() == 0){
                     loginSuccess.setText("");
