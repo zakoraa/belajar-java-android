@@ -2,6 +2,7 @@ package com.example.belajar_java_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,10 +18,13 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView loginSuccess ;
 
+    private Resources res;
+
     private void initView(){
          nameEditText = findViewById(R.id.nameEditText);
          loginButton = findViewById(R.id.doLoginButton);
          loginSuccess = findViewById(R.id.loginSuccessTextView);
+         res = getResources();
     }
 
     @Override
@@ -34,17 +38,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 String name = nameEditText.getText().toString();
+                String success = res.getString(R.string.login_success, name);
+                String[] fullName = res.getStringArray(R.array.full_name);
+
                 if(name.length() == 0){
                     loginSuccess.setText("");
                 }else {
-                    loginSuccess.setText("Login Success, Welcome " + name);
+                    loginSuccess.setText(success);
                 }
-                Log.v("RS", "This is Verbose");
-                Log.d("RS", "This is Debug");
-                Log.i("RS", "This is Info");
-                Log.w("RS", "This is Warn");
-                Log.e("RS", "This is Error");
-
             }
         });
 

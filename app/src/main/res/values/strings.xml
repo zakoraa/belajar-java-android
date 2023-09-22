@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">belajar-java-android</string>
+    <string name="app_name">Belajar</string>
+    <string name="login">LOGIN</string>
+    <string name="login_success">Login Success, Welcome %1$s</string>
+    <string-array name="full_name">
+        <item>Flora</item>
+        <item>Shafiqa</item>
+        <item>Riyadi</item>
+    </string-array>
 </resources>
