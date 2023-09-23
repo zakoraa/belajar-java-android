@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <include layout="@layout/hello_world"/>
-
+<include layout="@layout/fragment_home"/>
     <include layout="@layout/button_nav"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
