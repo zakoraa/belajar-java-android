@@ -1,20 +1,25 @@
 package com.example.belajar_java_android;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     private EditText nameEditText ;
     private EditText emailEditText ;
@@ -24,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView getEmailTextView ;
     private TextView getPassTextView ;
     private Resources res;
+    private BottomNavigationView bottomNavigationView;
+    private ProfileFragment profileFragment;
+    private SettingsFragment settingsFragment;
+    private HomeFragment homeFragment;
+    private MainActivity main;
 
     private void initView(){
          nameEditText = findViewById(R.id.nameEditText);
@@ -34,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
          getEmailTextView = findViewById(R.id.getEmailSuccessTextView);
          getPassTextView = findViewById(R.id.getPassSuccessTextView);
          res = getResources();
+         homeFragment = new HomeFragment();
+         profileFragment = new ProfileFragment();
+         settingsFragment = new SettingsFragment();
+         bottomNavigationView = findViewById(R.id.bottomView);
     }
 
     @Override
@@ -42,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initView();
+
+        bottomNavigationView.setOnItemSelectedListener(this);
+        bottomNavigationView.setSelectedItemId(R.id.mainActivity);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,5 +89,22 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, homeFragment).commit();
+                return true;
+                case R.id.person:
+                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, profileFragment).commit();
+                return true;
+            case R.id.setting:
+                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, settingsFragment).commit();
+                return true;
+
+        }
+        return false;
     }
 }
