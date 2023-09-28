@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     private SettingsFragment settingsFragment;
     private HomeFragment homeFragment;
     private Button buttonNav;
+    private Button buttonNavWData;
     private MainActivity main;
 
     private void initView(){
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
          settingsFragment = new SettingsFragment();
          bottomNavigationView = findViewById(R.id.bottomView);
          buttonNav = findViewById(R.id.btn_nav);
+         buttonNavWData = findViewById(R.id.btn_nav_w_data);
     }
 
     @Override
@@ -67,6 +69,16 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             if(v.getId() == R.id.btn_nav){
                 Intent moveIntent = new Intent(MainActivity.this, SecondActivity.class);
                 startActivity(moveIntent);
+            }
+        });
+
+        buttonNavWData.setOnClickListener(v->{
+            if(v.getId() == R.id.btn_nav_w_data){
+                String name = nameEditText.getText().toString().trim();
+                Intent moveIntent = new Intent(MainActivity.this, SecondWithData.class);
+                moveIntent.putExtra(SecondWithData.EXTRA_NAME, name);
+                startActivity(moveIntent);
+
             }
         });
 

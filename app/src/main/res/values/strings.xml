@@ -18,4 +18,6 @@
     <string name="settings_page">Settings Page</string>
     <string name="next_page">Next Page</string>
     <string name="hallo_flora">Hallo Flora!</string>
+    <string name="next_page_w_data">Next Page w Data</string>
+    <string name="data_received" />
 </resources>

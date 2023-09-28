@@ -26,6 +26,13 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/next_page"/>
 
+    <Button
+        android:id="@+id/btn_nav_w_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/next_page_w_data"/>
+
 
 
 
