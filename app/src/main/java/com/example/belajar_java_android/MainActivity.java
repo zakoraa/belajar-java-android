@@ -3,6 +3,7 @@ package com.example.belajar_java_android;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     private ProfileFragment profileFragment;
     private SettingsFragment settingsFragment;
     private HomeFragment homeFragment;
+    private Button buttonNav;
     private MainActivity main;
 
     private void initView(){
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
          profileFragment = new ProfileFragment();
          settingsFragment = new SettingsFragment();
          bottomNavigationView = findViewById(R.id.bottomView);
+         buttonNav = findViewById(R.id.btn_nav);
     }
 
     @Override
@@ -59,6 +62,13 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
         bottomNavigationView.setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.mainActivity);
+
+        buttonNav.setOnClickListener(v->{
+            if(v.getId() == R.id.btn_nav){
+                Intent moveIntent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(moveIntent);
+            }
+        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,4 +117,5 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         }
         return false;
     }
+
 }
