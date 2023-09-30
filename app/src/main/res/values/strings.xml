@@ -20,4 +20,6 @@
     <string name="hallo_flora">Hallo Flora!</string>
     <string name="next_page_w_data">Next Page w Data</string>
     <string name="data_received" />
+    <string name="next_page_with_object_data">NEXT PAGE WITH OBJECT DATA</string>
+    <string name="object_received"/>
 </resources>

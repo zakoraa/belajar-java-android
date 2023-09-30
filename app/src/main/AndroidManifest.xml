@@ -13,6 +13,13 @@
         android:theme="@style/Theme.Belajarjavaandroid"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityMoveWithObjectData"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SecondWithData"
             android:exported="false">
             <meta-data

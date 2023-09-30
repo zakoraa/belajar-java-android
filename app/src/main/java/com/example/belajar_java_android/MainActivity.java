@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     private Button buttonNav;
     private Button buttonNavWData;
     private MainActivity main;
+    private Button buttonNavWDataObject;
 
     private void initView(){
          nameEditText = findViewById(R.id.nameEditText);
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
          bottomNavigationView = findViewById(R.id.bottomView);
          buttonNav = findViewById(R.id.btn_nav);
          buttonNavWData = findViewById(R.id.btn_nav_w_data);
+         buttonNavWDataObject = findViewById(R.id.btn_nav_w_object_data);
     }
 
     @Override
@@ -80,6 +82,18 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
                 startActivity(moveIntent);
 
             }
+        });
+
+        buttonNavWDataObject.setOnClickListener(v->{
+            Person person = new Person();
+            person.setName("FLora");
+            person.setAge(18);
+            person.setCity("Bekasi");
+            person.setEmail("Flora@gmail.com");
+
+            Intent intent = new Intent(this, ActivityMoveWithObjectData.class);
+            intent.putExtra(ActivityMoveWithObjectData.EXTRA_PERSON, person);
+            startActivity(intent);
         });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
